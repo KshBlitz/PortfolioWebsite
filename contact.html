@@ -135,20 +135,21 @@
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
             <div class="col-12 col-lg-8">
-                <form class="contactform" method="post" action="php/process-form.php">
+                <form class="contactform" action="https://api.web3forms.com/submit" method="POST">
                     <div class="contactform">
+                        <input type="hidden" name="access_key" value="ba2d036d-2fae-4767-92bc-b2d934e34259">
                         <div class="row">
                             <div class="col-12 col-md-4">
-                                <input type="text" name="name" placeholder="YOUR NAME">
+                                <input type="text" name="name" placeholder="YOUR NAME" class="contact-input" required>
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="email" name="email" placeholder="YOUR EMAIL">
+                                <input type="email" name="email" placeholder="YOUR EMAIL" class="contact-input" required>
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="text" name="subject" placeholder="YOUR SUBJECT">
+                                <input type="text" name="subject" placeholder="YOUR SUBJECT" class="contact-input" required>
                             </div>
                             <div class="col-12">
-                                <textarea name="message" placeholder="YOUR MESSAGE"></textarea>
+                                <textarea name="message" placeholder="YOUR MESSAGE" class="contact-input" required></textarea>
                                 <button type="submit" class="button">
                                     <span class="button-text">Send Message</span>
                                     <span class="button-icon fa fa-send"></span>
