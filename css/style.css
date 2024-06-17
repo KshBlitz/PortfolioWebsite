@@ -605,7 +605,7 @@ body.light hr.separator {
 
 .home .home-details h1 span {
   color: #fff;
-  display: block;
+  display: inline;
 }
 
 .home .home-details h6 {
@@ -1789,5 +1789,20 @@ body.light hr.separator {
 
   .separator.mt-1 {
     margin-top: 35px !important;
+  }
+}
+
+.skills{
+  background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff, #8f68ff, #fc72ff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+  -webkit-animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient{
+  to{
+      background-position: 200%;
   }
 }
