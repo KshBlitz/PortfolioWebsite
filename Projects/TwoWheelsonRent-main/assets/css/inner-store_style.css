@@ -1,0 +1,439 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    --link-underline-padding: .5em;
+    color: black;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-box{
+    display: flex;
+    flex-direction: row;
+    margin-top: 7%;
+    overflow: hidden;
+}
+
+.img {
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc{
+    padding-left: 30px;
+    margin-top: 7%;
+}
+
+.title{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.price{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.img img{
+    height: 500px;
+    border-radius: 25px;
+}
+
+input[type="datetime-local"]{
+    padding: 10px;
+    width: 18vw;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+input[type="number"]{
+    padding: 13px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+input[type="email"]{
+    padding: 13px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.title , .price{
+    font-size: 13px;
+}
+
+/* .title h1, .price h1, .price span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+.payment:input{
+    padding: 0px 0px;
+}
+
+.u-form h2{
+    font-size: 20px;
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.u-ini{
+    display: flex;
+    justify-content: center;
+}
+
+.date, .hours{
+    display: flex;
+    flex-direction: column;
+    margin: 25px 25px 25px 0;
+}
+
+.email, .aadhar{
+    margin: 25px 25px 25px 0;
+
+}
+
+.lower{
+    display: flex;
+    margin-top: -25px;
+}
+
+.email h2, .pay h2 , .aadhar h2{
+    margin-bottom: 10px;
+
+}
+
+.date h2{
+    margin-bottom: 10px;
+}
+
+input[type="submit"]{
+    padding: 14px 16px;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: black;
+    margin-left: -22px;
+    cursor: pointer;
+}
+
+
+
+.pay{
+    /* margin-top: 20px;
+    margin-left: 15px; */
+    display: flex;
+    justify-content: center;
+}
+
+.hours h2{
+    margin-bottom: 10px;
+}
+
+.payment{
+    display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-box{
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 210px;
+    }
+
+    .title h1 , .price h1{
+        text-align: center;
+    }
+
+    .price h1{
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .img {
+        padding-right: 0px;
+    }
+
+    .img img{
+        /* height: 350px;
+        width: 350px; */
+        height: 300px;
+    }
+
+    .desc{
+        padding-left: 0px;
+        margin-top: 50px;
+    }
+
+    .u-ini{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .date input{
+       width: 100%;
+       padding: 12px;
+    }
+
+    .date , .hours{
+        flex-direction: column;
+    }
+
+    .date h2, .hours h2{
+        margin-bottom: 10px;
+        /* text-align: center; */
+    }
+
+    input[type="datetime-local"]{
+        margin-bottom: -20px;
+    }
+
+    input[type="number"]{
+        padding: 12px;
+    }
+}
+
+
+@media only screen and (max-width: 600px)
+{
+
+    .container{
+        margin-top: -60px;
+    }
+
+    .desktop-inner li{
+        display: none;
+    }
+}
+
+
+/* simpler animated */
+
+
+
+    @media only screen and (max-width: 600px){
+        .inner-store-navbar-mob{
+            margin: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .lower-navbar{
+            display: none;
+        }
+
+        .inner-store-navbar-mob img{
+            height: 40px;
+            cursor: pointer;
+        }
+
+    }
+
+/* navbar */
+
+
+.navbar, .mobile-sidebar ,
+.hero, .hero-wrapper, .store,.about-section, .about-container, footer, .lower-footer{
+    background-color: white;
+}
+
+ .upper-navbar, .lower-navbar{
+background-image: linear-gradient(315deg, #8ae9b3 0%, #c8d6e5 74%);
+}
+
+.alert_style{
+    margin-bottom: 15px;
+    color: rgb(55, 201, 55);
+}
+
+
+/* upper navbar */
+.navbar{
+    position: fixed;
+    color: black;
+    z-index: 1;
+    top: 0;
+}
+
+.hero{
+    margin-top: 154px;
+}
+
+.upper-navbar{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upper-navbar i{
+    height: 80px;
+    width: auto;
+    font-size: 60px;
+    padding: 20px 0 0 30px;
+    cursor: pointer;
+    overflow-y: hidden;
+    visibility: hidden;
+}
+
+.logo{
+    font-family: 'Lobster';
+    color: black;
+    margin-top: 30px;
+    margin-left: 2%;
+    font-size: 45px;
+}   
+
+
+
+/* lower navbar */
+
+.lower-navbar{
+    display: flex;
+    justify-content: space-between;     
+    width: 100vw;
+    padding-bottom: 7px;
+}
+
+.lower-navbar ul{
+display: flex;
+justify-content: space-between;
+list-style-type: none;
+margin-top: 20px;
+}
+
+/* .desktop-inner{
+    width: 70vw;
+} */
+
+.lower-navbar li{
+margin-left: 50px;
+}
+
+/* simpler animated */
+
+.lower-navbar ul li a{
+font-size: 25px;
+font-weight: 600;
+text-decoration: none;
+display: inline-block;
+background: linear-gradient(black 0 0) 
+    bottom left/
+    var(--underline-width, 0%) 0.1em
+    no-repeat;
+color: black;
+padding: 0 .5em 0.2em;
+transition: background-size 0.5s;
+}
+
+.lower-navbar ul li a:hover{
+    --underline-width: 100%;
+}
+
+
+.lower-navbar img{
+    height: 40px;
+    width: auto;
+}
+
+.mobile-sidebar{
+    display: none;
+}
+
+/* .desktop-inner img{
+    display: none;
+} */
+
+/* pop up */
+
+.popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: none;
+    z-index: 50;
+    background: url(/assets/img/user-img.jpg);
+    background-size: cover;
+  }
+
+.pbox{
+    background-color: rgba(100, 100, 100, .43);
+    height: 400px;
+    width: 400px;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: -2px 5px 43px 26px rgba(0,0,0,0.77);
+}
+
+.pbox ul{
+    height: 100%;
+    width: auto;
+    list-style-type: none;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent !important;
+}
+
+
+.pbox li a{
+    text-decoration: none;
+    color: black;
+    /* color: white; */
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.pbox ul li{
+    margin: 8px;
+    
+}
+
+.pbox img{
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+}
+
+.pbox img:hover{
+    cursor: pointer;
+}
+
+.nlogo2 img{
+    display: none;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link href="https://db.onlinewebfonts.com/c/b8da90c1201a2b340a6108b8ad0a52b8?family=Space+Bd+BT+Bold" rel="stylesheet">
+
+  <style>
+    /* Set a centered layout */
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body {
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url(/assets/img/login-cycle.jpg);
+      backdrop-filter: blur(3px);
+      background-size: cover;
+    }
+
+    .cont1 h1{
+      font-family: "Space Bd BT Bold";
+    }
+
+    form {
+      border: 2px solid black;
+      width: 25vw;
+      border-radius: 10px;
+      padding: 20px;
+      /* background-color: #f6ecc4;
+      background-image: linear-gradient(315deg, #f6ecc4 0%, #f7d4d4 74%); */
+/* 
+      background-color: #e0d2b4;
+background-image: linear-gradient(315deg, #e0d2b4 0%, #e2ac6b 74%); */
+
+background-color: #ffffff;
+background-image: linear-gradient(315deg, #ffffff 0%, #cea177 74%);
+
+    }
+
+    /* Make the input fields broad */
+
+    input {
+      width: 85%;
+      padding: 10px 15px;
+      margin: 5px 0;
+      border: 2px solid black;
+      border-radius: 7px;
+      outline: none;
+      font-size: 18px;
+    }
+
+    /* Add a submit button */
+
+    button {
+      padding: 6px 30px;
+      margin: 20px 0;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      input {
+        width: 80%;
+      }
+
+      form{
+        border: 1px solid #ddd;
+      }
+
+      form h1{
+        color: white;
+      }
+    }
+
+    form p{
+      color: white;
+    }
+
+    form p a{
+      color :#191970;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .cont1 h1{
+      margin-bottom: 10px;
+      font-size: 38px;
+    }
+
+    .cont2{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cont2 p{
+      color: black;
+    }
+
+.cont2 button{
+  margin-right: 8px;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  background-image: linear-gradient(315deg, #8ae9b3 0%, #c8d6e5 74%);
+  /* width: 100%; */
+}
+
+  </style>
+</head>
+<body>
+  <form id="MainForm">
+    <div class="cont1">
+      <h1>Login Form</h1>
+        <input type="text" name="username" id="username" placeholder="Enter your name" required>
+        <input type="email" name="userEmail" id="userEmail" placeholder="Your email" required>
+        <input type="password" name="password" id="password" placeholder="Your password" required>
+    </div>
+
+    <div class="cont2">
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="/signup.html">Register</a></p>
+    </div>
+  </form>
+  <script type="module">
+    (() => {
+      const firebaseConfig = {
+    apiKey: "AIzaSyA7BqOZiuTBeW8QmzjZ_wPDbzJUPWbN8d0",
+    authDomain: "registeration-db.firebaseapp.com",
+    databaseURL: "https://registeration-db-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "registeration-db",
+    storageBucket: "registeration-db.appspot.com",
+    messagingSenderId: "753934937383",
+    appId: "1:753934937383:web:9dd5a245b826870ac28d02",
+    measurementId: "G-PJ6LKCEW6N"
+  };
+
+
+      const initializeFirebase = () => {
+        import('https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js').then(({ initializeApp }) => {
+          import('https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js').then(({ getDatabase, ref, child, get }) => {
+            import('https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js').then(({ getAuth, signInWithEmailAndPassword }) => {
+              const app = initializeApp(firebaseConfig);
+              const db = getDatabase();
+              const auth = getAuth(app);
+              const dbref = ref(db);
+
+              const SignInUser = (evt) => {
+                evt.preventDefault();
+                const EmailInp = document.getElementById("userEmail").value;
+                const UserInp = document.getElementById("username").value;
+                const PassInp = document.getElementById("password").value;
+
+                signInWithEmailAndPassword(auth, EmailInp, PassInp)
+                  .then((credentials) => {
+                    get(child(dbref, `UsersAuthList/${credentials.user.uid}`)).then((snapshot) => {
+                      if (snapshot.exists()) {
+                        sessionStorage.setItem("user-info",EmailInp);
+                        sessionStorage.setItem("user-name",UserInp);
+                        sessionStorage.setItem("user-creds",JSON.stringify(credentials.user));
+                        window.location.href = "index.html";
+                      }
+                    });
+                  })
+                  .catch((error) => {
+                    console.error(error.code);
+                    console.error(error.message);
+                    alert(error.message);
+                  });
+              };
+
+              document
+                .getElementById("MainForm")
+                .addEventListener("submit", SignInUser);
+            });
+          });
+        });
+      };
+
+      initializeFirebase();
+    })();
+  </script>
+</body>
+</html>

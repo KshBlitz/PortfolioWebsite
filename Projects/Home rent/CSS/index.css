@@ -1,0 +1,18 @@
+.selection {
+    text-align: center;
+    margin-top: 10px; /* Adjust this value as needed */
+}
+
+.selection h2 {
+    text-decoration:underline;
+    color: white;
+    margin-bottom:5px;
+}
+
+.selection select {
+    padding: 10px;
+    color: black;
+    font-size: 30px;
+    border-radius: 30px;
+    background-color: white;
+}

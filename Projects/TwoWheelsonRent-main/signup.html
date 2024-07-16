@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://kit.fontawesome.com/3b54bb2e71.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href="https://db.onlinewebfonts.com/c/b8da90c1201a2b340a6108b8ad0a52b8?family=Space+Bd+BT+Bold" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+      
+    }
+
+    body {
+      width: 100%;
+      height: 84vh;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      /* background-color: #d9d9d9;
+      background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
+      background-color: #e2c9be;
+background-image: linear-gradient(315deg, #e2c9be 0%, #fbf7e9 74%);
+background-size: cover;
+
+    }
+
+
+    /* Make the input fields broad */
+    input {
+      width: 35%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 2px solid #2d3436;
+      border-radius: 8px;
+      color: #2d3436;
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    /* Add a submit button */
+    button {
+      background-image: linear-gradient(315deg, #8ae9b3 0%, #c8d6e5 74%);
+      color: black;
+      padding: 10px 30px;
+      margin: 8px 0;
+      border: none;
+      border: 2px solid black;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .reg-container{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 7%;
+    }
+
+    .col-1{
+      flex-basis: 35%;
+    }
+
+    .col-1 img{
+      height: 100%;
+      width: 100%;
+      margin-left: 15%;
+    }
+
+    .col-2{
+      flex-basis: 60%;
+    }
+
+    .lower p a{
+      text-decoration: none;
+    }
+
+    .lower p{
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    .box1 h1{
+      font-size: 40px;
+      font-family: "Space Bd BT Bold";
+      margin-bottom: 20px;
+    }
+
+    .lower{
+      margin-left: 20px;
+    }
+
+    .reg-left{
+      margin-right: 10px;
+    }
+
+    .box1 p a{
+      color: #191970;
+    }
+
+
+    
+  </style>
+</head>
+<body>
+  
+
+<div class="reg-container">
+
+  <div class="col-1">
+    <img src="./assets/img/reg-image.png" alt="">
+  </div>
+
+  <div class="col-2">
+    <form id="MainForm">
+      <div class="box1">
+        <h1>Registration Form</h1>
+  
+        <input class="reg-left" type="text" name="name" id="name" placeholder="Name" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input class="reg-left" type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+        <input type="text" name="address" id="address" placeholder="Address" required>
+        <input class="reg-left" type="email" name="email" id="email" placeholder="Email" required>
+        <input type="text" name="pincode" id="pincode" placeholder="Pincode" required>
+        <input class="reg-left" type="number" name="aadhar" id="aadhar" placeholder="Aadhar Card" required>
+        <input type="tel" name="phone" id="phone_number" placeholder="Phone Number" required>
+        <div class="lower">
+          <button class="" type="submit"">Register</button>
+          <button type="button" onclick="clearForm()"> Clear Form</button>
+          <p>Already a member? <a href="/login.html">Login</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <script src="signup.js"></script>
+
+  <script type="module">
+    const registerForm = document.getElementById('MainForm');
+    const aadhar = document.getElementById('aadhar');
+
+    // combination table
+    const d = [
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 0, 6, 7, 8, 9, 5],
+      [2, 3, 4, 0, 1, 7, 8, 9, 5, 6],
+      [3, 4, 0, 1, 2, 8, 9, 5, 6, 7],
+      [4, 0, 1, 2, 3, 9, 5, 6, 7, 8],
+      [5, 9, 8, 7, 6, 0, 4, 3, 2, 1],
+      [6, 5, 9, 8, 7, 1, 0, 4, 3, 2],
+      [7, 6, 5, 9, 8, 2, 1, 0, 4, 3],
+      [8, 7, 6, 5, 9, 3, 2, 1, 0, 4],
+      [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    ];
+
+    // permutation table
+    const p = [
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 5, 7, 6, 2, 8, 3, 0, 9, 4],
+      [5, 8, 0, 3, 7, 9, 6, 1, 4, 2],
+      [8, 9, 1, 6, 0, 4, 3, 5, 2, 7],
+      [9, 4, 5, 3, 1, 2, 6, 8, 7, 0],
+      [4, 2, 8, 6, 5, 7, 3, 9, 0, 1],
+      [2, 7, 9, 3, 8, 0, 6, 4, 1, 5],
+      [7, 0, 4, 6, 9, 1, 3, 2, 5, 8]
+    ];
+
+    // validates Aadhar number received as string
+    function validate(aadharNumber) {
+      let c = 0;
+      let invertedArray = aadharNumber.split('').map(Number).reverse();
+
+      invertedArray.forEach((val, i) => {
+        c = d[c][p[(i % 8)][val]];
+      });
+
+      return (c === 0);
+    }
+
+    registerForm.addEventListener('submit', (event) => {
+      if (aadhar.value.length !== 12) {
+        event.preventDefault();
+        alert('Aadhar number should be 12 digits');
+        return;
+      }
+
+      if (!validate(aadhar.value)) {
+        event.preventDefault();
+        alert('Your Aadhar card number is not valid');
+        return;
+      }
+      saveCredentials();
+
+      // If all validations pass, proceed with form submission
+      // You can put your form submission logic here
+      
+    });
+
+    const saveCredentials = () => {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('userName', name);
+      // localStorage.setItem('userPassword', password);
+      console.log("credentials saved");
+    };
+
+    (() => {
+      const firebaseConfig = {
+    apiKey: "AIzaSyA7BqOZiuTBeW8QmzjZ_wPDbzJUPWbN8d0",
+    authDomain: "registeration-db.firebaseapp.com",
+    databaseURL: "https://registeration-db-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "registeration-db",
+    storageBucket: "registeration-db.appspot.com",
+    messagingSenderId: "753934937383",
+    appId: "1:753934937383:web:9dd5a245b826870ac28d02",
+    measurementId: "G-PJ6LKCEW6N"
+  };
+
+
+      const initializeFirebase = () => {
+        import(
+          'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js'
+        ).then(({ initializeApp }) => {
+          import(
+            'https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js'
+          ).then(({ getDatabase, set, ref }) => {
+            import(
+              'https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js'
+            ).then(({ getAuth, createUserWithEmailAndPassword, onAuthStateChanged }) => {
+              const app = initializeApp(firebaseConfig);
+              const db = getDatabase();
+              const auth = getAuth(app);
+
+              onAuthStateChanged(auth, (user) => {
+                if (!user && window.location.pathname !== '/signup.html') {
+                  // User is not logged in, redirect to signup.html
+                  window.location.href = '/signup.html';
+                }
+              });
+
+              const RegisterUser = evt => {
+                evt.preventDefault();
+                const EmailInp = document.getElementById('email').value;
+                const PassInp = document.getElementById('password').value;
+                const FnameInp = document.getElementById('name').value;
+                const AddressInp = document.getElementById('address').value;
+                const PincodeInp = document.getElementById('pincode').value;
+                const AadharInp = document.getElementById('aadhar').value;
+                const PhoneInp = document.getElementById('phone_number').value;
+
+                createUserWithEmailAndPassword(auth, EmailInp, PassInp)
+                  .then(credentials => {
+                    set(ref(db, `UsersAuthList/${credentials.user.uid}`), {
+                      firstName: FnameInp,
+                      password: PassInp,
+                      address: AddressInp,
+                      pincode: PincodeInp,
+                      aadhar: AadharInp,
+                      phone: PhoneInp,
+                      email: EmailInp
+                    }).then(() => {
+                      // Redirect to login page after successful registration
+                      window.location.href = '/login.html';
+                    });
+                  })
+                  .catch(error => {
+                    console.error(error.code);
+                    console.error(error.message);
+                    alert(error.message);
+                  });
+              };
+
+              document
+                .getElementById('MainForm')
+                .addEventListener('submit', RegisterUser);
+            });
+          });
+        });
+      };
+
+      initializeFirebase();
+    })();
+  </script>
+</body>
+</html>

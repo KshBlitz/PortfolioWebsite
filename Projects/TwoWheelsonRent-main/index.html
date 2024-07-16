@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TwoWheelsOnRent</title>
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/3b54bb2e71.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href="https://db.onlinewebfonts.com/c/b8da90c1201a2b340a6108b8ad0a52b8?family=Space+Bd+BT+Bold" rel="stylesheet">
+  </head>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <body>
+          <!-- popup -->
+      
+          <div class="popup">
+            <div class="pbox">
+              <ul>
+
+                <img src="./assets/img/pcross1.png" onclick="closePopup()" />
+                <li class="loggedIn2"><a href="/signup.html">Register</a></li>
+                <li class="loggedIn1"><a href="/login.html"">Login</a></li>
+                <li id="specialGreet"><a id="greet"></a></li>
+                <li id="logout"><a href="#" onclick="signOut()">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+
+    <div class="container" id="home">
+
+      <div class="navbar">
+        <div class="upper-navbar">
+
+          <i class="fa-solid fa-circle-user" onclick="showPopup()"></i>
+
+          <!-- <img src="./assets/img/logo.jpg" /> -->
+          <h1 class="logo">TwoWheelsOnRent</h1>
+
+            <img class="flag"
+              src="./assets/img/flag.png"
+              style="height: 60px;margin-top: 20px;margin-right: 30px;" 
+            />
+
+        </div>
+
+        <div class="mobile-sidebar">
+          <img src="./assets/img/close.png" onclick="closeSideBar()" alt="" />
+          <div class="mobile">
+            <ul>
+              <li class="mobile"><a href="#" onclick="closeSideBar()">Home</a></li>
+              <li class="mobile"><a href="#store" onclick="closeSideBar()">Store</a></li>
+              <li class="mobile">
+                <a href="#about" onclick="closeSideBar()">About</a>
+              </li>
+              <li class="mobile">
+                <a href="#contact" onclick="closeSideBar()">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lower-navbar">
+          <div class="nlogo1 desktop">
+            <img src="./assets/img/menu.png" onclick="showSideBar()" alt="" />
+          </div>
+
+          <ul class="desktop-inner">
+            <img src="./assets/img/logo.jpg" alt="" />
+            <li class="desktop-inner"><a href="#">Home</a></li>
+            <li class="desktop-inner"><a onclick="scrollToStore('store')">Store</a></li>
+            <li class="desktop-inner">
+              <a onclick="scrollToAbout('about')">About</a>
+            </li>
+            <li class="desktop-inner">
+              <a onclick="scrollToContact('contact')">Contact</a>
+            </li>
+          </ul>
+
+          <div class="nlogo2 desktop">
+            <img src="./assets/img/user.png" onclick="showPopup()" />
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="hero">
+
+
+        <div class="hero-wrapper">
+
+          <div class="pop-up">
+
+          </div>
+          <div class="left-img">
+            <img src="./assets/img/bicycle-header.png" alt="" />
+          </div>
+
+          <!-- -------------------------mobile view cycle--------------------------- -->
+
+
+          <div class="cycle1">
+            <img src="./assets/img/cycle1.jpg" alt="" />
+          </div>
+
+
+          <div class="description">
+            <div class="htitle">
+              <h1>Welcome to TwoWheelsOnRent!</h1>
+            </div>
+            <div class="hdesc">
+              <h2 class="l1">Get cycles on Rent</h2>
+              <h2 class="l2">We provide rental services <br>for bicycles all over Mulund</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="store" id="store" >
+        <div class="stitle">
+          <h1>Store</h1>
+        </div>
+
+        <div class="grid">
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store.html">
+              <img src="./assets/img/cycle01.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>MTB Pedal Ranger 3</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 100 / hour</p>
+            </div>
+          </a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store1.html">
+              <img src="./assets/img/cycle02.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Trail Master Pro X</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 100 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store2.html">
+              <img src="./assets/img/cycle03.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Carbon Super Peak 3000</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 100 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store3.html">
+              <img src="./assets/img/cycle04.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Ridge Runner Elite</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 100 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store4.html">
+              <img src="./assets/img/cycle05.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Trail Blaze Femme</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 70 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store5.html">
+              <img src="./assets/img/cycle06.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>SheRider Summit Pro</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 70 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store6.html">
+              <img src="./assets/img/cycle07.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>LadyVenture All-Terrain</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 70 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store7.html">
+              <img src="./assets/img/cycle08.webp" alt="" />
+            </div>
+            <div class="title">
+              <h3>BellaTrail XC Explorer</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 70 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store8.html">
+              <img src="./assets/img/cycle09.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Fire Trailblazer Junior MTB</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 50 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store9.html">
+              <img src="./assets/img/cycle10.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Rugged Rider Mountain Bike</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 50 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store10.html">
+              <img src="./assets/img/cycle11.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Trailblazer Princess MTB</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 50 / hour</p>
+            </div></a>
+          </div>
+
+          <div class="grid-item">
+            <div class="photo">
+              <a href="./pages/Inner-store/inner-store11.html">
+              <img src="./assets/img/cycle12.jpg" alt="" />
+            </div>
+            <div class="title">
+              <h3>Adventure Sparkle Trail</h3>
+            </div>
+            <div class="price">
+              <p>From ₹ 50 / hour</p>
+            </div>
+          </a>
+          </div>
+          
+        </div>
+
+      </div>
+
+
+      <div class="about-section" id="about">
+        <div id="pabout">
+
+        </div>
+        
+
+        <div class="about-container">
+
+          <div class="about-left">
+            <img src="./assets/img/about-img.jpg" alt="">
+            
+          </div>
+          <div class="about-right">
+            <div class="about-description">
+              <h1>About Us</h1>
+              <h3><span id="aboutGreet"> </span> Riders!</h3>
+              <p>
+                Embrace the freedom to explore your city on two wheels with our seamless and user-friendly platform. Whether it's a quick commute or a weekend adventure, we connect you with quality.
+                Our mission is to provide bicycles on rent on affordable cost so that every could afford riding. Currently, we are proud to serve the vibrant community of Mulund. Our services extend all over Mulund, ensuring that every corner of this dynamic locality can benefit from what we offer.
+              </p>
+
+            </div>
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact" id="contact">
+        <div class="contact-in">
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7536.905675571429!2d72.94417896084875!3d19.17541387789928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8f900d0f5d5%3A0xfb3086e0255db693!2sMulund%2C%20Mulund%20West%2C%20Mumbai%2C%20Maharashtra%20400080!5e0!3m2!1sen!2sin!4v1695672090002!5m2!1sen!2sin" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+          <div class="contact-form">
+            <h1>Contact Us</h1>
+            <form id="contactForm" action="https://formspree.io/f/mgeglwrj" method="post">
+              <div id="alert" class="alert_style"></div>
+              <input type="text" placeholder="Name" name="name" class="contact-form-txt" required />
+              <input type="text" placeholder="Email" name="email" class="contact-form-txt" required />
+              <textarea placeholder="Message" name="message" class="contact-form-textarea" required></textarea>
+              <input type="submit" placeholder="Submit" class="contact-form-btn" required />
+              
+            </form>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <footer class="footer">
+
+        <div class="logo-section">
+          <!-- <img src="./assets/img/logo.jpg" alt=""> -->
+          <h1 class="logo" style="font-size: 30px;">TwoWheelsOnRent</h1>
+
+        </div>
+
+        <div class="mid-section">
+          <ul>
+            <li><a href="/login.html">Login</a></li>
+            <li><a href="/signup.html">Register</a></li>
+            <li><a href="./pages/privacy.html">Privacy</a></li>
+            <li><a href="./pages/privacy.html">Terms</a></li>
+          </ul>
+        </div>
+
+        <div class="end-section">
+          <ul>
+            <a href="https://www.linkedin.com/in/kalashmahajan/" target="_blank" class="footer_social">
+              <p><i class="fa-brands fa-linkedin"></i> Kalash Mahajan</p>
+            </a>
+        </ul>
+        </div>
+
+      </footer>
+      <div class="lower-footer">
+        <h4>Copyright © 2024 TwoWheelsOnRent. All rights reserved.</h4>
+        <h4>Developed by <a href="https://kalash25.netlify.app/" target="_blank">Kalash Mahajan</a></h4>
+      </div>
+    </div>
+
+  </body>
+  <script>
+    const popup = document.querySelector('.popup');
+    
+    function closePopup() {
+      popup.style.display="none"
+      const hero = document.querySelector('.hero');
+      const store = document.querySelector('.store');
+      const about = document.querySelector('.about-section');
+      const contact = document.querySelector('.contact');
+      const footer = document.querySelector('.footer');
+      const lowerfooter = document.querySelector('.lower-footer');
+      hero.style.display="block";
+      store.style.display="block";
+      about.style.display="block";
+      contact.style.display="flex";
+      footer.style.display="flex";
+      lowerfooter.style.display="block";
+    }
+    
+    function showPopup() {  
+      popup.style.display="flex";
+      const hero = document.querySelector('.hero');
+      const store = document.querySelector('.store');
+      const about = document.querySelector('.about-section');
+      const contact = document.querySelector('.contact');
+      const footer = document.querySelector('.footer');
+      const lowerfooter = document.querySelector('.lower-footer');
+      hero.style.display="none";
+      store.style.display="none";
+      about.style.display="none";
+      contact.style.display="none";
+      footer.style.display="none";
+      lowerfooter.style.display="none";
+      // window.onscroll = function () { window.scrollTo(0, 0); };
+      
+    }
+
+    if(userInfo){
+    var popup1 = document.querySelector('.loggedIn1');
+    var popup2 = document.querySelector('.loggedIn2');
+    popup1.style.display = 'none';
+    popup2.style.display = 'none';
+    const greet = document.getElementById("greet");
+    const specialGreet = document.getElementById("specialGreet");
+    specialGreet.style.display="flex";
+    // const userName = localStorage.getItem("userName");
+    const userName = sessionStorage.getItem("user-name");
+    greet.innerText = `Welcome ${userName}`;
+    console.log(`Name of user is ${userName}`);
+    console.log("displayed prev element none");
+}
+else{
+    const logout = document.getElementById("logout");
+    logout.style.display="none";
+}
+
+// formspree
+
+const form = document.getElementById("contactForm");
+
+ async function handleSubmit(event) {
+  console.log("entered handlesubmit func");
+  event.preventDefault();
+  var status = document.getElementById("alert");
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      status.innerHTML = "Thanks! Your message has been sent.";
+      document.querySelector(".alert_style").style.display = "block";
+
+      // hide alert after 3 seconds
+      setTimeout(function () {
+        document.querySelector(".alert_style").style.display = "none";
+      }, 4000);
+      form.reset();
+    })
+    .catch((error) => {
+      status.innerHTML =
+        "Oops! There was a problem delivering your message, please contact via other means.";
+      document.querySelector(".alert_style").style.display = "block";
+
+      // hide alert after 3 seconds
+      setTimeout(function () {
+        document.querySelector(".alert_style").style.display = "none";
+      }, 4000);
+    });
+}
+form.addEventListener("submit", handleSubmit);
+
+// greetings
+
+const currentTime = new Date().getHours();
+const aboutGreet = document.getElementById("aboutGreet");
+console.log(aboutGreet);
+
+if (currentTime >= 5 && currentTime < 12) {
+  aboutGreet.innerText = "Good morning ";
+} else if (currentTime >= 12 && currentTime < 18) {
+  aboutGreet.innerText = "Good afternoon ";
+} else {
+  aboutGreet.innerText = "Good night ";
+}
+
+
+    
+  </script>
+
+  
+</html>
